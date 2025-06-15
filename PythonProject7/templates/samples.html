@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="text-center">{{ translations.title }}</h1>
+        <p class="text-center">{{ translations.subtitle }}</p>
+        <div class="d-grid gap-2">
+            <a href="{{ url_for('static', filename='pdfs/sample_en.pdf') }}" class="btn btn-primary" target="_blank">{{ translations.english }}</a>
+            <a href="{{ url_for('static', filename='pdfs/sample_kn.pdf') }}" class="btn btn-primary" target="_blank">{{ translations.kannada }}</a>
+            <a href="{{ url_for('static', filename='pdfs/sample_hi.pdf') }}" class="btn btn-primary" target="_blank">{{ translations.hindi }}</a>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">{{ translations.back }}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

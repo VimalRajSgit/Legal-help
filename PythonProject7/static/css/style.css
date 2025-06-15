@@ -1,0 +1,197 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: linear-gradient(120deg, #f4f6fa 60%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+option[value="kn"], label[for="language"], textarea, .form-label {
+    font-family: 'Noto Sans Kannada', sans-serif;
+}
+
+option[value="hi"] {
+    font-family: 'Noto Serif Devanagari', sans-serif;
+}
+
+.alert {
+    margin-bottom: 24px;
+    border-radius: 10px;
+    background: #eaf3fb;
+    border: 1px solid #cae2f3;
+    color: #26475b;
+}
+
+h1, .h1 {
+    font-weight: 800;
+    font-size: 2.2rem;
+    letter-spacing: 0.01em;
+}
+
+h4, .h4 {
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.navbar {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e3e6ea;
+    box-shadow: 0 2px 10px 0 rgba(60,80,120,0.04);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #2463eb !important;
+}
+
+
+.form-control, .form-select, .btn {
+    font-size: 1rem;
+}
+
+/* Style for the Sample Letters link */
+.sample-link {
+    font-size: 1.25rem; /* Increase font size */
+    font-weight: 700; /* Make it bold */
+    padding: 10px 20px; /* Add padding for a button-like appearance */
+    background-color: #007bff; /* Bootstrap primary blue background */
+    color: white !important; /* White text for contrast */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.sample-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white !important;
+}
+
+/* Ensure language-specific fonts are applied */
+.sample-link[lang="kn"] {
+    font-family: 'Noto Sans Kannada', sans-serif;
+}
+
+.container {
+    max-width: 660px;
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(15, 36, 73, 0.08);
+    padding: 38px 32px 32px 32px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        padding: 18px 3vw 18px 3vw;
+    }
+}
+
+
+.sample-link[lang="hi"] {
+    font-family: 'Noto Serif Devanagari', sans-serif;
+}
+
+/* Style for the example image */
+.example-image {
+    border: 1px solid #ddd; /* Light border for visibility */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above the image */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Enhance form styling */
+form {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+
+.form-label {
+    font-weight: 600; /* Make labels bold */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary {
+    padding: 12px 22px;
+    font-size: 1.13rem;
+    font-weight: 700;
+    border-radius: 7px;
+    background: linear-gradient(90deg, #2563eb 75%, #38bdf8 100%);
+    border: none;
+    color: #fff;
+    box-shadow: 0 3px 18px 0 rgba(56,189,248,0.08);
+    transition: background 0.22s, box-shadow 0.22s;
+}
+
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #1d4ed8 70%, #06b6d4 100%);
+    color: #fff;
+    box-shadow: 0 5px 24px 0 rgba(56,189,248,0.14);
+}
+
+
+/* Style for the language selector */
+.language-selector {
+    font-size: 1.25rem; /* Match the sample link size */
+    font-weight: 700; /* Make it bold */
+    padding: 10px 20px; /* Add padding */
+    color: #007bff !important; /* Match the primary blue */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+.language-selector:hover {
+    background-color: #e9ecef; /* Light gray on hover */
+    color: #0056b3 !important; /* Darker blue on hover */
+}
+
+.language-selector[lang="kn"], .dropdown-item[value="kn"] {
+    font-family: 'Noto Sans Kannada', sans-serif;
+}
+
+.language-selector {
+    border: 1px solid #d5e1ea;
+    background: #f5faff;
+    margin-right: 10px;
+    box-shadow: none !important;
+}
+
+
+.language-selector[lang="hi"], .dropdown-item[value="hi"] {
+    font-family: 'Noto Serif Devanagari', sans-serif;
+}
+
+.dropdown-menu {
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    font-size: 1.13rem;
+    padding: 10px 22px;
+    border-radius: 7px;
+}
+
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}

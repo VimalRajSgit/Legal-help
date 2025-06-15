@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="text-center">{{ translations.title }}</h1>
+        <p class="text-center">{{ translations.subtitle }}</p>
+
+        <!-- Guidance Section -->
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">How to Provide Details</h4>
+            <p>{{ instructions.how_to_provide }}</p>
+            <ul>
+                <li>{{ instructions.example_name }}</li>
+                <li>{{ instructions.example_location }}</li>
+                <li>{{ instructions.example_phone }}</li>
+                <li>{{ instructions.example_subject }}</li>
+            </ul>
+            <p>{{ instructions.example_image_prompt }}</p>
+            <img src="{{ url_for('static', filename='images/example_upload.png') }}" alt="Example Upload Format" class="img-fluid example-image" style="max-width: 300px;">
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                <label for="details_text" class="form-label">{{ translations.details_label }}</label>
+                {{ form.details_text(class="form-control", placeholder=instructions.placeholder) }}
+            </div>
+            <div class="mb-3">
+                <label for="details_file" class="form-label">{{ translations.upload_label }}</label>
+                <div class="input-group">
+                    {{ form.details_file(class="form-control", title=instructions.tooltip) }}
+                    <span class="input-group-text" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ instructions.tooltip }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="d-grid">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Enable Bootstrap tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+</script>
+{% endblock %}
