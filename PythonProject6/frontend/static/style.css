@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional color palette for legal system */
+@layer base {
+    :root {
+        --navy-50: #F2F6FA;
+        --navy-200: #C8D1DE;
+        --navy-600: #304269;
+        --navy-900: #1E3A8A;
+        --gold-500: #BFA76A;
+        --gold-300: #E2CAA0;
+        --neutral-100: #F8F9FB;
+        --neutral-900: #191E23;
+        --btn-radius: 8px;
+    }
+    html {
+        font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+        color: var(--navy-900);
+    }
+}
+
+/* Layout and container */
+body {
+    background: var(--navy-50);
+    min-height: 100vh;
+}
+
+#chat-history {
+    scrollbar-width: thin;
+    scrollbar-color: var(--navy-200) var(--navy-50);
+    background: var(--neutral-100);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px 0 rgba(30,58,138,0.05);
+    border: 1px solid var(--navy-200);
+}
+
+#chat-history::-webkit-scrollbar {
+    width: 10px;
+}
+#chat-history::-webkit-scrollbar-track {
+    background: var(--navy-50);
+}
+#chat-history::-webkit-scrollbar-thumb {
+    background-color: var(--navy-200);
+    border-radius: 6px;
+}
+
+/* Custom controls - Audio styling */
+audio::-webkit-media-controls-panel {
+    background-color: var(--navy-50);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/static/background.jpg?v=2');
+    background-position: center;
+    background-size: cover;
+    opacity: 0.13;
+    z-index: -1;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 28px 0 rgba(30,58,138,0.10);
+    border: 1px solid var(--navy-200);
+    padding: 2rem;
+}
+
+.btn-main, .btn-main:visited {
+    background: var(--navy-900);
+    color: #fff !important;
+    border-radius: var(--btn-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 1px 5px 0 rgba(30,58,138,0.10);
+    transition: background 0.18s, box-shadow 0.15s;
+    padding: 0.7em 2em;
+    border: none;
+}
+.btn-main:hover, .btn-main:focus {
+    background: var(--gold-500);
+    color: var(--navy-900) !important;
+    box-shadow: 0 2px 12px 0 rgba(191,167,106,0.11);
+}
+
+.btn-alt {
+    background: var(--gold-300);
+    color: var(--navy-900);
+    border-radius: var(--btn-radius);
+    font-weight: 500;
+    padding: 0.7em 1.5em;
+}
+.btn-alt:hover, .btn-alt:focus {
+    background: var(--gold-500);
+    color: #fff;
+}
+
+/* Input, Select, Textarea */
+input, select, textarea {
+    border-radius: 8px !important;
+    border: 1px solid var(--navy-200) !important;
+    outline: none !important;
+    box-shadow: 0 1px 4px 0 rgba(30,58,138,0.05);
+    font-size: 1.08rem;
+    padding: 0.95em 1.1em;
+    color: var(--navy-900);
+    background: #fff;
+    transition: border 0.16s, box-shadow 0.17s;
+}
+input:focus, select:focus, textarea:focus {
+    border: 1.8px solid var(--gold-500) !important;
+    box-shadow: 0 0 0 2px var(--gold-300);
+}
+
+label {
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 0.2em;
+}
+
+footer {
+    background: var(--navy-900);
+    color: #fff !important;
+    font-size: 1rem;
+}
+
+/* Status and highlight blocks */
+#recording-status {
+    color: #a94442;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+#response-area, #key-points {
+    background: var(--navy-50);
+    border-radius: 10px;
+    color: var(--navy-900);
+}
+
+/* Utilize a subtle professional shadow for panels */
+.bg-white, .rounded-lg {
+    box-shadow: 0 2.5px 22px 0 rgba(30,58,138,0.07);
+}
+
+/* Logo and header corrections */
+header {
+    background: linear-gradient(90deg, var(--navy-900) 80%, var(--gold-500) 100%);
+    color: #fff;
+}

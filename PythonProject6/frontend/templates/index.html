@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Aid Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/dist/heroicons.min.js"></script>
+</head>
+<body class="bg-gray-100 bg-cover bg-center bg-fixed font-sans" style="background-image: url('/static/background.jpg');">
+    <div class="bg-white/90 min-h-screen backdrop-blur-sm">
+        <header class="py-7 px-0 shadow-md text-white" style="background: linear-gradient(90deg,#1E3A8A 80%,#BFA76A 100%);">
+            <div class="container mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <img src="/static/logo.png" alt="Legal Aid Logo" class="h-14 w-14" onerror="this.style.display='none'">
+                    <div>
+                        <h1 class="text-3xl font-serif font-bold tracking-tight">Legal Aid Assistant</h1>
+                        <p class="text-base font-sans opacity-90">Empowering you with clear legal guidance</p>
+                    </div>
+                </div>
+                <nav>
+                    <a href="#" class="font-semibold text-gold-500 hover:underline hover:text-gold-500 transition-colors duration-150 px-4 py-1 rounded-md">About</a>
+                </nav>
+            </div>
+        </header>
+        <main class="container mx-auto py-10 px-2 max-w-3xl flex-1">
+            <div class="card mb-10">
+                <div class="mb-8">
+                    <label for="language-select">Select Language</label>
+                    <select id="language-select" class="w-full mt-2 mb-1">
+                        <option value="kn">Kannada</option>
+                        <option value="hi">Hindi</option>
+                        <option value="ta">Tamil</option>
+                        <option value="te">Telugu</option>
+                        <option value="ml">Malayalam</option>
+                        <option value="bn">Bengali</option>
+                        <option value="gu">Gujarati</option>
+                        <option value="mr">Marathi</option>
+                        <option value="pa">Punjabi</option>
+                        <option value="ur">Urdu</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div id="chat-history" class="max-h-80 overflow-y-auto mb-7 p-5" aria-live="polite"></div>
+                <div class="input-area flex flex-col md:flex-row gap-4 mb-7">
+                    <textarea id="query-input" placeholder="Ask your legal question..." class="flex-1" aria-label="Legal question input"></textarea>
+                    <div class="flex flex-wrap gap-2 md:self-end">
+                        <button onclick="sendQuery()" class="btn-main flex items-center gap-2" aria-label="Send query">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            Send
+                        </button>
+                        <button id="record-btn" onclick="startRecording()" class="btn-alt flex items-center gap-2" aria-label="Start recording">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m7-7a7 7 0 00-7-7m7 7v4m0 0H3m9-11v4"></path></svg>
+                            Record
+                        </button>
+                        <button id="stop-btn" onclick="stopRecording()" disabled class="btn-alt flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white" aria-label="Stop recording" style="background: #dc2626;">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10h6v4H9v-4z"></path></svg>
+                            Stop
+                        </button>
+                        <button onclick="clearHistory()" class="btn-alt flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white" aria-label="Clear history" style="background: #4B5563;">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            Clear History
+                        </button>
+                    </div>
+                </div>
+                <div id="recording-status" class="mb-4 hidden" aria-live="assertive">Recording...</div>
+                <div id="response-area" class="p-5 mb-4" aria-live="polite"></div>
+                <div id="key-points" class="p-5 mb-4" aria-live="polite"></div>
+                <audio id="response-audio" controls class="w-full" aria-label="Audio response"></audio>
+            </div>
+        </main>
+        <footer class="text-white p-6 text-center rounded-b-lg shadow-inner" style="background:#1E3A8A;">
+            <p class="text-base">Powered by xAI © 2025</p>
+        </footer>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
